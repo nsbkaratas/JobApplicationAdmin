@@ -3,6 +3,8 @@ package com.example.react.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,26 +26,10 @@ public class Applicants {
 	private String additional_Info;
 	private String comment;
 	
-	public Applicants() {
-		
-	}
-	
-
-	public Applicants(int id, String f_Name, String l_Name, String e_mail, String phone, String country, String city,
-			String address, String position, String additional_Info, String comment) {
-		super();
-		this.id = id;
-		this.f_Name = f_Name;
-		this.l_Name = l_Name;
-		this.e_mail = e_mail;
-		this.phone = phone;
-		this.country = country;
-		this.city = city;
-		this.address = address;
-		this.position = position;
-		this.additional_Info = additional_Info;
-		this.comment = comment;
-	}
+    public Applicants()
+    {
+    	
+    }
 
 	public int getId() {
 		return id;
@@ -132,11 +118,28 @@ public class Applicants {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
-	
 
+	public Applicants(int id, String f_Name, String l_Name, String e_mail, String phone, String country, String city,
+			String address, String position, String additional_Info, String comment) {
+		super();
+		this.id = id;
+		this.f_Name = f_Name;
+		this.l_Name = l_Name;
+		this.e_mail = e_mail;
+		this.phone = phone;
+		this.country = country;
+		this.city = city;
+		this.address = address;
+		this.position = position;
+		this.additional_Info = additional_Info;
+		this.comment = comment;
+	}
+    
+   
 	
-	
-	
+//	@Override
+//	public String toString() {
+//		return "Student [id=" + id + ", name=" + name + ", grade=" + grade + "]";
+//	}
 	
 }
