@@ -23,10 +23,10 @@ class ListApplicants extends Component {
 
                         <thead>
                             <tr>
+                                <th>id</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>e-mail</th>
-                                <th>Phone</th>
                                 <th>Phone</th>
                                 <th>Country</th>
                                 <th>City</th>
@@ -41,9 +41,18 @@ class ListApplicants extends Component {
                                 this.state.applicants.map(
                                     applicant=>
                                     <tr key={applicant.id}>
-                                        <td>{applicant.firstname}</td>
-                                        <td>{applicant.lastname}</td>
-                                        <td>{applicant.email}</td>
+                                        <td>{applicant.id}</td>
+                                        <td>{applicant.f_Name}</td>
+                                        <td>{applicant.l_Name}</td>
+                                        <td>{applicant.e_mail}</td>
+                                        <td>{applicant.phone}</td>
+                                        <td>{applicant.country}</td>
+                                        <td>{applicant.city}</td>
+                                        <td>{applicant.address}</td>
+                                        <td>{applicant.position}</td>
+                                        <td>{applicant.additional_Info}</td>
+                                        <td>{applicant.comment}</td>
+
                                     </tr>                                
                                 )
                             }
