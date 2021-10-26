@@ -8,17 +8,24 @@ class ListApplicants extends Component {
         this.state ={
             applicants:[]
         }
+        this.addApplicant=this.addApplicant.bind(this)
     }
     componentDidMount(){
         ApplicantService.getApplicants().then((res)=>{
             this.setState({applicants:res.data})
         })
     }
+
+    addApplicant(){
+        this.props.history.push("/listapplicants")
+    }
+
     render() {
         return (
             <div>
                 <h2 className="text-center">Applicants List</h2>
                 <div className="row">
+                <button className="btn btn-primary" onClick={this.addApplicant}> Add Applicant </button>
                     <table className="table table-striped table-boarded">
 
                         <thead>
@@ -28,12 +35,13 @@ class ListApplicants extends Component {
                                 <th>Last Name</th>
                                 <th>e-mail</th>
                                 <th>Phone</th>
-                                <th>Country</th>
+                                <th>State</th>
                                 <th>City</th>
                                 <th>Address</th>
                                 <th>Position</th>
                                 <th>Additional Info</th>
                                 <th>Comment</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,12 +54,15 @@ class ListApplicants extends Component {
                                         <td>{applicant.l_Name}</td>
                                         <td>{applicant.e_mail}</td>
                                         <td>{applicant.phone}</td>
-                                        <td>{applicant.country}</td>
+                                        <td>{applicant.state}</td>
                                         <td>{applicant.city}</td>
                                         <td>{applicant.address}</td>
                                         <td>{applicant.position}</td>
                                         <td>{applicant.additional_Info}</td>
                                         <td>{applicant.comment}</td>
+                                        <td>
+
+                                        </td>
 
                                     </tr>                                
                                 )
