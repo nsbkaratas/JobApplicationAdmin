@@ -19,7 +19,7 @@ public class Applicants {
 	private String l_Name;
 	private String e_mail;
 	private String phone;
-	private String country;
+	private String state;
 	private String city;
 	private String address;
 	private String position;
@@ -71,12 +71,12 @@ public class Applicants {
 		this.phone = phone;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getState() {
+		return state;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getCity() {
@@ -119,7 +119,7 @@ public class Applicants {
 		this.comment = comment;
 	}
 
-	public Applicants(int id, String f_Name, String l_Name, String e_mail, String phone, String country, String city,
+	public Applicants(int id, String f_Name, String l_Name, String e_mail, String phone, String state, String city,
 			String address, String position, String additional_Info, String comment) {
 		super();
 		this.id = id;
@@ -127,7 +127,7 @@ public class Applicants {
 		this.l_Name = l_Name;
 		this.e_mail = e_mail;
 		this.phone = phone;
-		this.country = country;
+		this.state = state;
 		this.city = city;
 		this.address = address;
 		this.position = position;

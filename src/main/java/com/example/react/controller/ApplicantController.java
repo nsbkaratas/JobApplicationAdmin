@@ -38,9 +38,9 @@ public class ApplicantController {
 	
 	//add applicants
 	@PostMapping("/addapplicants")
-    public Applicants newStudent(@RequestBody Applicants s)
+    public Applicants newApplicant(@RequestBody Applicants applicant)
     {
-		return applicantRepo.save(s);
+		return applicantRepo.save(applicant);
     }
 	
 //	
