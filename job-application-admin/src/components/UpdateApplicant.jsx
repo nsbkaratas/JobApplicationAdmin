@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import ApplicantService from '../services/ApplicantService'
 
-class AddApplicant extends Component {
+class UpdateApplicant extends Component {
     constructor(props){
         super(props)
         this.state={
+            id:this.props.match.params.id,
             f_Name:'',
             l_Name:'',
             e_mail:'',
@@ -27,7 +28,24 @@ class AddApplicant extends Component {
         this.changePositionHandler= this.changePositionHandler.bind(this)
         this.changeAdditionalInfoHandler= this.changeAdditionalInfoHandler.bind(this)
         this.changeCommentHandler= this.changeCommentHandler.bind(this)
-        this.saveApplicant=this.saveApplicant.bind(this)
+        this.updateApplicant=this.updateApplicant.bind(this)
+    }
+    componentDidMount(){
+        ApplicantService.getApplicantById(this.state.id).then(res=>{
+            let applicant=res.data;
+            this.setState({
+                f_Name:applicant.f_Name,
+                l_Name:applicant.l_Name,
+                e_mail:applicant.e_mail,
+                phone:applicant.phone,
+                state:applicant.state,
+                city:applicant.city,
+                address:applicant.address,
+                position:applicant.position,
+                additional_Info:applicant.additional_Info,
+                comment:applicant.comment,
+            })
+        })
     }
 
     changeFirstNameHandler=(event)=>{
@@ -61,7 +79,7 @@ class AddApplicant extends Component {
         this.setState({comment: event.target.value})
     }
 
-    saveApplicant=(e)=>{
+    updateApplicant=(e)=>{
         e.preventDefault();
         let applicant={
             f_Name:this.state.f_Name,
@@ -76,11 +94,9 @@ class AddApplicant extends Component {
             comment:this.state.comment,
         }
         console.log(applicant)
-        ApplicantService.addApplicant(applicant).then((res)=>{
+        ApplicantService.updateApplicant(applicant,this.state.id).then((res)=>{
             this.props.history.push('/listapplicants')
-        }).catch(err=>{
-            console.log("record not saved.");
-        });
+        })
     }
     cancel(){
         this.props.history.push("/listapplicants")
@@ -117,7 +133,7 @@ class AddApplicant extends Component {
                                     <label>Comment:</label>
                                     <input placeholder="Comment" name="comment" className="form-group" value={this.state.comment} onChange={this.changeCommentHandler} />
                                 </div>
-                                <button className="btn btn-success" onClick={this.saveApplicant}> Save </button>
+                                <button className="btn btn-success" onClick={this.updateApplicant}> Update </button>
                                 <button className="btn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>
                             </form>
 
@@ -128,4 +144,4 @@ class AddApplicant extends Component {
         )
     }
 }
-export default AddApplicant
+export default UpdateApplicant

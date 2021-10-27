@@ -5,7 +5,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home'
 import AddApplicant from './components/AddAppicant';
-
+import UpdateApplicant from './components/UpdateApplicant';
+import DeleteApplicant from './components/DeleteApplicant';
 
 
 function App() {
@@ -17,8 +18,10 @@ function App() {
       <Switch>
         <Route exact path ="/" component={Home}></Route>
         <Route exact path ="/listapplicants" component={ListApplicants}></Route>
-        <Route exact path ="/add-applicant" component={AddApplicant}></Route>
-      </Switch>
+        <Route exact path ="/addapplicant" component={AddApplicant}></Route>
+        <Route exact path ="/updateapplicant/:id" component={UpdateApplicant}></Route>
+        <Route exact path ="/deleteapplicant/:id" component={DeleteApplicant}></Route>
+        </Switch>
       </div>
       <Footer/>
       </Router>

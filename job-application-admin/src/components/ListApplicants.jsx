@@ -9,15 +9,25 @@ class ListApplicants extends Component {
             applicants:[]
         }
         this.addApplicant=this.addApplicant.bind(this)
+        this.editApplicant=this.editApplicant.bind(this)
+        
     }
+    editApplicant=(id)=>{
+        this.props.history.push(`/updateapplicant/${id}`);
+    }
+    deleteApplicant(id)
+     {
+        this.props.history.push(`/deleteapplicant/${id}`);
+                
+     }
     componentDidMount(){
         ApplicantService.getApplicants().then((res)=>{
             this.setState({applicants:res.data})
         })
     }
 
-    addApplicant(){
-        this.props.history.push("/listapplicants")
+    addApplicant=()=>{
+        this.props.history.push("/addapplicant")
     }
 
     render() {
@@ -61,7 +71,8 @@ class ListApplicants extends Component {
                                         <td>{applicant.additional_Info}</td>
                                         <td>{applicant.comment}</td>
                                         <td>
-
+                                            <button onClick={()=>this.editApplicant(applicant.id) } className="btn btn-primary" >Update</button>
+                                            <button onClick={()=>this.deleteApplicant(applicant.id) } className="btn btn-danger" >Delete</button>
                                         </td>
 
                                     </tr>                                

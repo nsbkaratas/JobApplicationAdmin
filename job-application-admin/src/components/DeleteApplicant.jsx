@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import ApplicantService from '../services/ApplicantService'
+import ApplicantService from '../services/ApplicantService';
 
-class AddApplicant extends Component {
-    constructor(props){
+class DeleteApplicant extends Component {
+    constructor(props)
+    {
         super(props)
+        
         this.state={
+            id:this.props.match.params.id,
             f_Name:'',
             l_Name:'',
             e_mail:'',
@@ -16,52 +19,29 @@ class AddApplicant extends Component {
             additional_Info:'',
             comment:'',
         }
-
-        this.changeFirstNameHandler= this.changeFirstNameHandler.bind(this)
-        this.changeLastNameHandler= this.changeLastNameHandler.bind(this)
-        this.changeEmailHandler= this.changeEmailHandler.bind(this)
-        this.changePhoneHandler= this.changePhoneHandler.bind(this)
-        this.changeStateHandler= this.changeStateHandler.bind(this)
-        this.changeCityHandler= this.changeCityHandler.bind(this)
-        this.changeAddressHandler= this.changeAddressHandler.bind(this)
-        this.changePositionHandler= this.changePositionHandler.bind(this)
-        this.changeAdditionalInfoHandler= this.changeAdditionalInfoHandler.bind(this)
-        this.changeCommentHandler= this.changeCommentHandler.bind(this)
-        this.saveApplicant=this.saveApplicant.bind(this)
+     
+        
+            this.deleteApplicant=this.deleteApplicant.bind(this)
+    }
+    componentDidMount(){
+        ApplicantService.getApplicantById(this.state.id).then(res=>{
+            let applicant=res.data;
+            this.setState({
+                f_Name:applicant.f_Name,
+                l_Name:applicant.l_Name,
+                e_mail:applicant.e_mail,
+                phone:applicant.phone,
+                state:applicant.state,
+                city:applicant.city,
+                address:applicant.address,
+                position:applicant.position,
+                additional_Info:applicant.additional_Info,
+                comment:applicant.comment,
+            })
+        })
     }
 
-    changeFirstNameHandler=(event)=>{
-        this.setState({f_Name: event.target.value})
-    }
-    changeLastNameHandler=(event)=>{
-        this.setState({l_Name: event.target.value})
-    }
-    changeEmailHandler=(event)=>{
-        this.setState({e_mail: event.target.value})
-    }
-    changePhoneHandler=(event)=>{
-        this.setState({phone: event.target.value})
-    }
-    changeStateHandler=(event)=>{
-        this.setState({state: event.target.value})
-    }
-    changeCityHandler=(event)=>{
-        this.setState({city: event.target.value})
-    }
-    changeAddressHandler=(event)=>{
-        this.setState({address: event.target.value})
-    }
-    changePositionHandler=(event)=>{
-        this.setState({position: event.target.value})
-    }
-    changeAdditionalInfoHandler=(event)=>{
-        this.setState({additional_Info: event.target.value})
-    }
-    changeCommentHandler=(event)=>{
-        this.setState({comment: event.target.value})
-    }
-
-    saveApplicant=(e)=>{
+    deleteApplicant = (e) => {
         e.preventDefault();
         let applicant={
             f_Name:this.state.f_Name,
@@ -75,12 +55,12 @@ class AddApplicant extends Component {
             additional_Info:this.state.additional_Info,
             comment:this.state.comment,
         }
-        console.log(applicant)
-        ApplicantService.addApplicant(applicant).then((res)=>{
-            this.props.history.push('/listapplicants')
-        }).catch(err=>{
-            console.log("record not saved.");
-        });
+
+        console.log(applicant);
+        ApplicantService.deleteApplicant(this.state.id).then(res => {
+            
+            this.props.history.push('/listapplicants');
+        })
     }
     cancel(){
         this.props.history.push("/listapplicants")
@@ -90,11 +70,11 @@ class AddApplicant extends Component {
         return (
             <div>
                 <div className="container">
-                    <div className="row">
-                        <div className="card col-md-3 offset-md-3">
-                        <h3>Job Application form</h3>
-                        <div className="card-body"></div>
-                            <form>
+                   <div className="row">
+                      <div className="card col-md-6 offset-md-3 offset-md-3">
+                          <h3 className="text-center">Delete Student</h3>
+                          <div className="card-body">
+                              <form>  
                                 <div className="form-group">
                                     <label>First Name:</label>
                                     <input placeholder="First Name" name="firstName" className="form-group" value={this.state.f_Name} onChange={this.changeFirstNameHandler} />
@@ -116,16 +96,16 @@ class AddApplicant extends Component {
                                     <input placeholder="Additional Info" name="additional_Info" className="form-group" value={this.state.additional_Info} onChange={this.changeAdditionalInfoHandler} />
                                     <label>Comment:</label>
                                     <input placeholder="Comment" name="comment" className="form-group" value={this.state.comment} onChange={this.changeCommentHandler} />
-                                </div>
-                                <button className="btn btn-success" onClick={this.saveApplicant}> Save </button>
-                                <button className="btn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
+                                </div>  
+                                    <button className="btn btn-success" onClick={this.deleteApplicant}> Delete </button>
+                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>                    
+                              </form>
+                          </div>
+                      </div>
+                   </div>
+               </div>
             </div>
         )
     }
 }
-export default AddApplicant
+export default DeleteApplicant
