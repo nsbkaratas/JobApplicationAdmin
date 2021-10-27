@@ -65,6 +65,7 @@ public class ApplicantController {
 	    app.setAddress(applicant.getAddress());
 	    app.setPosition(applicant.getPosition());
 	    app.setAdditional_Info(applicant.getAdditional_Info());
+	    app.setResume(applicant.getResume());
 	    app.setComment(applicant.getComment());
 	    
 	    Applicants updatedApplicant=applicantRepo.save(app);

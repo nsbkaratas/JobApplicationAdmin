@@ -24,6 +24,7 @@ public class Applicants {
 	private String address;
 	private String position;
 	private String additional_Info;
+	private byte[] resume;
 	private String comment;
 	
     public Applicants()
@@ -110,6 +111,14 @@ public class Applicants {
 	public void setAdditional_Info(String additional_Info) {
 		this.additional_Info = additional_Info;
 	}
+	
+	public byte[] getResume() {
+		return resume;
+	}
+
+	public void setResume(byte[] resume) {
+		this.resume = resume;
+	}
 
 	public String getComment() {
 		return comment;
@@ -120,7 +129,7 @@ public class Applicants {
 	}
 
 	public Applicants(int id, String f_Name, String l_Name, String e_mail, String phone, String state, String city,
-			String address, String position, String additional_Info, String comment) {
+			String address, String position, String additional_Info, String comment, byte[] resume) {
 		super();
 		this.id = id;
 		this.f_Name = f_Name;
@@ -132,6 +141,7 @@ public class Applicants {
 		this.address = address;
 		this.position = position;
 		this.additional_Info = additional_Info;
+		this.resume = resume;
 		this.comment = comment;
 	}
     
