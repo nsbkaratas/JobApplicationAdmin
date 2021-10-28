@@ -9,8 +9,6 @@ class ApplicantForm extends Component {
             l_Name:'',
             e_mail:'',
             phone:'',
-            state:'',
-            city:'',
             address:'',
             position:'',
             resume_Link:'',
@@ -21,8 +19,6 @@ class ApplicantForm extends Component {
         this.changeLastNameHandler= this.changeLastNameHandler.bind(this)
         this.changeEmailHandler= this.changeEmailHandler.bind(this)
         this.changePhoneHandler= this.changePhoneHandler.bind(this)
-        this.changeStateHandler= this.changeStateHandler.bind(this)
-        this.changeCityHandler= this.changeCityHandler.bind(this)
         this.changeAddressHandler= this.changeAddressHandler.bind(this)
         this.changePositionHandler= this.changePositionHandler.bind(this)
         this.changeAdditionalInfoHandler= this.changeAdditionalInfoHandler.bind(this)
@@ -41,12 +37,6 @@ class ApplicantForm extends Component {
     }
     changePhoneHandler=(event)=>{
         this.setState({phone: event.target.value})
-    }
-    changeStateHandler=(event)=>{
-        this.setState({state: event.target.value})
-    }
-    changeCityHandler=(event)=>{
-        this.setState({city: event.target.value})
     }
     changeAddressHandler=(event)=>{
         this.setState({address: event.target.value})
@@ -68,8 +58,6 @@ class ApplicantForm extends Component {
             l_Name:this.state.l_Name,
             e_mail:this.state.e_mail,
             phone:this.state.phone,
-            state:this.state.state,
-            city:this.state.city,
             address:this.state.address,
             position:this.state.position,
             resume_Link:this.state.resume_Link,
@@ -100,8 +88,6 @@ class ApplicantForm extends Component {
                                     <input placeholder="Last Name" name="lastName" className="form-control" value={this.state.l_Name} onChange={this.changeLastNameHandler} /><br/>
                                     <input placeholder="e-mail" name="e_mail" className="form-control" value={this.state.e_mail} onChange={this.changeEmailHandler} /><br/>
                                     <input placeholder="Phone" name="phone" className="form-control" value={this.state.phone} onChange={this.changePhoneHandler} /><br/>
-                                    <input placeholder="State" name="state" className="form-control" value={this.state.state} onChange={this.changeStateHandler} /><br/>
-                                    <input placeholder="City" name="city" className="form-control" value={this.state.city} onChange={this.changeCityHandler} /><br/>
                                     <input placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.changeAddressHandler} /><br/>
                                     <input placeholder="Position" name="position" className="form-control" value={this.state.position} onChange={this.changePositionHandler} /><br/>
                                     <input placeholder="Resume Link" name="resume_Link" className="form-control" value={this.state.resume_Link} onChange={this.changeAdditionalInfoHandler} /><br/>

@@ -3,14 +3,14 @@ import React from 'react';
 import ListApplicants from './components/ListApplicants';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home'
+import Home from './Pages/Home'
 import AddApplicant from './components/AddApplicant';
 import UpdateApplicant from './components/UpdateApplicant';
 import DeleteApplicant from './components/DeleteApplicant';
 import ApplicantForm from './components/ApplicantForm';
-import GoodByeMessage from './components/GoodByeMessage';
-import ManagerLogin from './components/ManagerLogin';
-import Blog from './components/Blog';
+import GoodByeMessage from './Pages/GoodByeMessage';
+import ManagerLogin from './Pages/ManagerLogin';
+import Blog from './Pages/Blog';
 import "./App.css"
 
 

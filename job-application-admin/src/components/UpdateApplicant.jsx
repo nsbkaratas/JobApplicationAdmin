@@ -22,8 +22,6 @@ class UpdateApplicant extends Component {
         this.changeLastNameHandler= this.changeLastNameHandler.bind(this)
         this.changeEmailHandler= this.changeEmailHandler.bind(this)
         this.changePhoneHandler= this.changePhoneHandler.bind(this)
-        this.changeStateHandler= this.changeStateHandler.bind(this)
-        this.changeCityHandler= this.changeCityHandler.bind(this)
         this.changeAddressHandler= this.changeAddressHandler.bind(this)
         this.changePositionHandler= this.changePositionHandler.bind(this)
         this.changeAdditionalInfoHandler= this.changeAdditionalInfoHandler.bind(this)
@@ -38,8 +36,6 @@ class UpdateApplicant extends Component {
                 l_Name:applicant.l_Name,
                 e_mail:applicant.e_mail,
                 phone:applicant.phone,
-                state:applicant.state,
-                city:applicant.city,
                 address:applicant.address,
                 position:applicant.position,
                 resume_Link:applicant.resume_Link,
@@ -59,12 +55,6 @@ class UpdateApplicant extends Component {
     }
     changePhoneHandler=(event)=>{
         this.setState({phone: event.target.value})
-    }
-    changeStateHandler=(event)=>{
-        this.setState({state: event.target.value})
-    }
-    changeCityHandler=(event)=>{
-        this.setState({city: event.target.value})
     }
     changeAddressHandler=(event)=>{
         this.setState({address: event.target.value})
@@ -86,8 +76,6 @@ class UpdateApplicant extends Component {
             l_Name:this.state.l_Name,
             e_mail:this.state.e_mail,
             phone:this.state.phone,
-            state:this.state.state,
-            city:this.state.city,
             address:this.state.address,
             position:this.state.position,
             resume_Link:this.state.resume_Link,
@@ -104,24 +92,22 @@ class UpdateApplicant extends Component {
 
     render() {
         return (
-            <div>
+            <div className="page">
                 <div className="container">
                     <div className="row">
-                        <div className="card col-md-3 offset-md-3">
+                        <div className="card col-md-3 offset-md-5">
                         <h3>Job Application form</h3>
                         <div className="card-body"></div>
                             <form>
                                 <div className="form-group">
-                                    <input placeholder="First Name" name="firstName" className="form-group" value={this.state.f_Name} onChange={this.changeFirstNameHandler} />
-                                    <input placeholder="Last Name" name="lastName" className="form-group" value={this.state.l_Name} onChange={this.changeLastNameHandler} />
-                                    <input placeholder="e-mail" name="e_mail" className="form-group" value={this.state.e_mail} onChange={this.changeEmailHandler} />
-                                    <input placeholder="Phone" name="phone" className="form-group" value={this.state.phone} onChange={this.changePhoneHandler} />
-                                    <input placeholder="State" name="state" className="form-group" value={this.state.state} onChange={this.changeStateHandler} />
-                                    <input placeholder="City" name="city" className="form-group" value={this.state.city} onChange={this.changeCityHandler} />
-                                    <input placeholder="Address" name="address" className="form-group" value={this.state.address} onChange={this.changeAddressHandler} />
-                                    <input placeholder="Position" name="position" className="form-group" value={this.state.position} onChange={this.changePositionHandler} />
-                                    <input placeholder="Resume Link" name="resume_Link" className="form-group" value={this.state.resume_Link} onChange={this.changeAdditionalInfoHandler} />
-                                    <input placeholder="Comment" name="comment" className="form-group" value={this.state.comment} onChange={this.changeCommentHandler} />
+                                    <input placeholder="First Name" name="firstName" className="form-control" value={this.state.f_Name} onChange={this.changeFirstNameHandler} />
+                                    <input placeholder="Last Name" name="lastName" className="form-control" value={this.state.l_Name} onChange={this.changeLastNameHandler} />
+                                    <input placeholder="e-mail" name="e_mail" className="form-control" value={this.state.e_mail} onChange={this.changeEmailHandler} />
+                                    <input placeholder="Phone" name="phone" className="form-control" value={this.state.phone} onChange={this.changePhoneHandler} />
+                                    <input placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.changeAddressHandler} />
+                                    <input placeholder="Position" name="position" className="form-control" value={this.state.position} onChange={this.changePositionHandler} />
+                                    <input placeholder="Resume Link" name="resume_Link" className="form-control" value={this.state.resume_Link} onChange={this.changeAdditionalInfoHandler} />
+                                    <input placeholder="Comment" name="comment" className="form-control" value={this.state.comment} onChange={this.changeCommentHandler} />
                                 </div>
                                 <button className="btn btn-success" onClick={this.updateApplicant}> Update </button>
                                 <button className="btn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>

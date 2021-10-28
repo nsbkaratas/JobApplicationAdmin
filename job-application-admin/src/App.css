@@ -17,7 +17,9 @@ body{
   width: 100%;
   flex-grow: 1;
 }
-
+#table{
+  background-color: rgb(211, 210, 210);
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

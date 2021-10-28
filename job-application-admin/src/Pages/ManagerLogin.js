@@ -8,7 +8,7 @@ const ManagerLogin = () => {
     }
 
     return (
-        <div className="card-body card col-md-3 offset-md-5" >
+        <div className="card col-md-2 offset-md-5" >
             <form id="form" onSubmit={submit}>
                 <div className="form-group">
                     <input placeholder="User Name" type="text" /><br/>

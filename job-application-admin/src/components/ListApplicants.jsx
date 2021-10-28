@@ -36,7 +36,7 @@ class ListApplicants extends Component {
                 <h2 className="text-center">Applicants List</h2>
                 <div className="row">
                 <button className="btn btn-primary" onClick={this.addApplicant}> Add Applicant </button>
-                    <table className="table table-striped table-boarded">
+                    <table className="table table-striped table-boarded" id="table">
 
                         <thead>
                             <tr>
@@ -45,8 +45,6 @@ class ListApplicants extends Component {
                                 <th>Last Name</th>
                                 <th>e-mail</th>
                                 <th>Phone</th>
-                                <th>State</th>
-                                <th>City</th>
                                 <th>Address</th>
                                 <th>Position</th>
                                 <th>Resume Link</th>
@@ -64,11 +62,9 @@ class ListApplicants extends Component {
                                         <td>{applicant.l_Name}</td>
                                         <td>{applicant.e_mail}</td>
                                         <td>{applicant.phone}</td>
-                                        <td>{applicant.state}</td>
-                                        <td>{applicant.city}</td>
                                         <td>{applicant.address}</td>
                                         <td>{applicant.position}</td>
-                                        <td>{applicant.resume_Link}</td>
+                                        <td><a href="">{applicant.resume_Link}</a></td>
                                         <td>{applicant.comment}</td>
                                         <td>
                                             <button onClick={()=>this.editApplicant(applicant.id) } className="btn btn-primary" >Update</button>
