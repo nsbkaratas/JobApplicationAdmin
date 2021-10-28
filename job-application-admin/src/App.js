@@ -9,6 +9,9 @@ import UpdateApplicant from './components/UpdateApplicant';
 import DeleteApplicant from './components/DeleteApplicant';
 import ApplicantForm from './components/ApplicantForm';
 import GoodByeMessage from './components/GoodByeMessage';
+import ManagerLogin from './components/ManagerLogin';
+import Blog from './components/Blog';
+import "./App.css"
 
 
 function App() {
@@ -24,8 +27,9 @@ function App() {
         <Route exact path ="/updateapplicant/:id" component={UpdateApplicant}></Route>
         <Route exact path ="/deleteapplicant/:id" component={DeleteApplicant}></Route>
         <Route exact path ="/applicantform" component={ApplicantForm}></Route>
-        {/* <Route exact path ="/managersignin" component={ManagerSignIn}></Route> */}
+        <Route exact path ="/managersignin" component={ManagerLogin}></Route>
         <Route exact path ="/submitionsuccess" component={GoodByeMessage}></Route>
+        <Route exact path ="/blog" component={Blog}></Route>
         </Switch>
       </div>
       <Footer/>

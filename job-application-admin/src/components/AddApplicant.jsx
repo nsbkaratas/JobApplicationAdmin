@@ -88,33 +88,23 @@ class AddApplicant extends Component {
 
     render() {
         return (
-            <div>
+            <div className="page">
                 <div className="container">
                     <div className="row">
-                        <div className="card col-md-3 offset-md-3">
+                        <div className="card col-md-3 offset-md-5">
                         <h3>Job Application form</h3>
                         <div className="card-body"></div>
                             <form>
                                 <div className="form-group">
-                                    <label>First Name:</label>
                                     <input placeholder="First Name" name="firstName" className="form-control" value={this.state.f_Name} onChange={this.changeFirstNameHandler} /><br/>
-                                    <label>Last Name:</label>
                                     <input placeholder="Last Name" name="lastName" className="form-control" value={this.state.l_Name} onChange={this.changeLastNameHandler} /><br/>
-                                    <label>e-mail:</label>
                                     <input placeholder="e-mail" name="e_mail" className="form-control" value={this.state.e_mail} onChange={this.changeEmailHandler} /><br/>
-                                    <label>Phone:</label>
                                     <input placeholder="Phone" name="phone" className="form-control" value={this.state.phone} onChange={this.changePhoneHandler} /><br/>
-                                    <label>State:</label>
                                     <input placeholder="State" name="state" className="form-control" value={this.state.state} onChange={this.changeStateHandler} /><br/>
-                                    <label>City:</label>
                                     <input placeholder="City" name="city" className="form-control" value={this.state.city} onChange={this.changeCityHandler} /><br/>
-                                    <label>Address:</label>
                                     <input placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.changeAddressHandler} /><br/>
-                                    <label>Position:</label>
                                     <input placeholder="Position" name="position" className="form-control" value={this.state.position} onChange={this.changePositionHandler} /><br/>
-                                    <label>Resume Link:</label>
                                     <input placeholder="Resume Link" name="resume_Link" className="form-control" value={this.state.resume_Link} onChange={this.changeAdditionalInfoHandler} /><br/>
-                                    <label>Comment:</label>
                                     <input placeholder="Comment" name="comment" className="form-control" value={this.state.comment} onChange={this.changeCommentHandler} /><br/>
                                 </div>
                                 <button className="btn btn-success" onClick={this.saveApplicant}> Save </button>
