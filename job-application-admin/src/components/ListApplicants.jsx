@@ -49,7 +49,7 @@ class ListApplicants extends Component {
                                 <th>City</th>
                                 <th>Address</th>
                                 <th>Position</th>
-                                <th>Additional Info</th>
+                                <th>Resume Link</th>
                                 <th>Comment</th>
                                 <th>Actions</th>
                             </tr>
@@ -68,7 +68,7 @@ class ListApplicants extends Component {
                                         <td>{applicant.city}</td>
                                         <td>{applicant.address}</td>
                                         <td>{applicant.position}</td>
-                                        <td>{applicant.additional_Info}</td>
+                                        <td>{applicant.resume_Link}</td>
                                         <td>{applicant.comment}</td>
                                         <td>
                                             <button onClick={()=>this.editApplicant(applicant.id) } className="btn btn-primary" >Update</button>

@@ -16,7 +16,7 @@ class DeleteApplicant extends Component {
             city:'',
             address:'',
             position:'',
-            additional_Info:'',
+            resume_Link:'',
             comment:'',
         }
      
@@ -35,7 +35,7 @@ class DeleteApplicant extends Component {
                 city:applicant.city,
                 address:applicant.address,
                 position:applicant.position,
-                additional_Info:applicant.additional_Info,
+                resume_Link:applicant.resume_Link,
                 comment:applicant.comment,
             })
         })
@@ -52,7 +52,7 @@ class DeleteApplicant extends Component {
             city:this.state.city,
             address:this.state.address,
             position:this.state.position,
-            additional_Info:this.state.additional_Info,
+            resume_Link:this.state.resume_Link,
             comment:this.state.comment,
         }
 
@@ -92,8 +92,8 @@ class DeleteApplicant extends Component {
                                     <input placeholder="Address" name="address" className="form-group" value={this.state.address} onChange={this.changeAddressHandler} />
                                     <label>Position:</label>
                                     <input placeholder="Position" name="position" className="form-group" value={this.state.position} onChange={this.changePositionHandler} />
-                                    <label>Additional Info:</label>
-                                    <input placeholder="Additional Info" name="additional_Info" className="form-group" value={this.state.additional_Info} onChange={this.changeAdditionalInfoHandler} />
+                                    <label>Resume Link:</label>
+                                    <input placeholder="Resume Link" name="resume_Link" className="form-group" value={this.state.resume_Link} onChange={this.changeAdditionalInfoHandler} />
                                     <label>Comment:</label>
                                     <input placeholder="Comment" name="comment" className="form-group" value={this.state.comment} onChange={this.changeCommentHandler} />
                                 </div>  

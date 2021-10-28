@@ -13,7 +13,7 @@ class AddApplicant extends Component {
             city:'',
             address:'',
             position:'',
-            additional_Info:'',
+            resume_Link:'',
             comment:'',
         }
 
@@ -55,7 +55,7 @@ class AddApplicant extends Component {
         this.setState({position: event.target.value})
     }
     changeAdditionalInfoHandler=(event)=>{
-        this.setState({additional_Info: event.target.value})
+        this.setState({resume_Link: event.target.value})
     }
     changeCommentHandler=(event)=>{
         this.setState({comment: event.target.value})
@@ -72,7 +72,7 @@ class AddApplicant extends Component {
             city:this.state.city,
             address:this.state.address,
             position:this.state.position,
-            additional_Info:this.state.additional_Info,
+            resume_Link:this.state.resume_Link,
             comment:this.state.comment,
         }
         console.log(applicant)
@@ -97,25 +97,25 @@ class AddApplicant extends Component {
                             <form>
                                 <div className="form-group">
                                     <label>First Name:</label>
-                                    <input placeholder="First Name" name="firstName" className="form-group" value={this.state.f_Name} onChange={this.changeFirstNameHandler} />
+                                    <input placeholder="First Name" name="firstName" className="form-control" value={this.state.f_Name} onChange={this.changeFirstNameHandler} /><br/>
                                     <label>Last Name:</label>
-                                    <input placeholder="Last Name" name="lastName" className="form-group" value={this.state.l_Name} onChange={this.changeLastNameHandler} />
+                                    <input placeholder="Last Name" name="lastName" className="form-control" value={this.state.l_Name} onChange={this.changeLastNameHandler} /><br/>
                                     <label>e-mail:</label>
-                                    <input placeholder="e-mail" name="e_mail" className="form-group" value={this.state.e_mail} onChange={this.changeEmailHandler} />
+                                    <input placeholder="e-mail" name="e_mail" className="form-control" value={this.state.e_mail} onChange={this.changeEmailHandler} /><br/>
                                     <label>Phone:</label>
-                                    <input placeholder="Phone" name="phone" className="form-group" value={this.state.phone} onChange={this.changePhoneHandler} />
+                                    <input placeholder="Phone" name="phone" className="form-control" value={this.state.phone} onChange={this.changePhoneHandler} /><br/>
                                     <label>State:</label>
-                                    <input placeholder="State" name="state" className="form-group" value={this.state.state} onChange={this.changeStateHandler} />
+                                    <input placeholder="State" name="state" className="form-control" value={this.state.state} onChange={this.changeStateHandler} /><br/>
                                     <label>City:</label>
-                                    <input placeholder="City" name="city" className="form-group" value={this.state.city} onChange={this.changeCityHandler} />
+                                    <input placeholder="City" name="city" className="form-control" value={this.state.city} onChange={this.changeCityHandler} /><br/>
                                     <label>Address:</label>
-                                    <input placeholder="Address" name="address" className="form-group" value={this.state.address} onChange={this.changeAddressHandler} />
+                                    <input placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.changeAddressHandler} /><br/>
                                     <label>Position:</label>
-                                    <input placeholder="Position" name="position" className="form-group" value={this.state.position} onChange={this.changePositionHandler} />
-                                    <label>Additional Info:</label>
-                                    <input placeholder="Additional Info" name="additional_Info" className="form-group" value={this.state.additional_Info} onChange={this.changeAdditionalInfoHandler} />
+                                    <input placeholder="Position" name="position" className="form-control" value={this.state.position} onChange={this.changePositionHandler} /><br/>
+                                    <label>Resume Link:</label>
+                                    <input placeholder="Resume Link" name="resume_Link" className="form-control" value={this.state.resume_Link} onChange={this.changeAdditionalInfoHandler} /><br/>
                                     <label>Comment:</label>
-                                    <input placeholder="Comment" name="comment" className="form-group" value={this.state.comment} onChange={this.changeCommentHandler} />
+                                    <input placeholder="Comment" name="comment" className="form-control" value={this.state.comment} onChange={this.changeCommentHandler} /><br/>
                                 </div>
                                 <button className="btn btn-success" onClick={this.saveApplicant}> Save </button>
                                 <button className="btn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>

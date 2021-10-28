@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 @Table(name="Applicants")
 public class Applicants {
@@ -23,9 +25,9 @@ public class Applicants {
 	private String city;
 	private String address;
 	private String position;
-	private String additional_Info;
-	private byte[] resume;
+	private String resume_Link;
 	private String comment;
+	
 	
     public Applicants()
     {
@@ -95,6 +97,7 @@ public class Applicants {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 
 	public String getPosition() {
 		return position;
@@ -103,21 +106,13 @@ public class Applicants {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-
-	public String getAdditional_Info() {
-		return additional_Info;
-	}
-
-	public void setAdditional_Info(String additional_Info) {
-		this.additional_Info = additional_Info;
-	}
 	
-	public byte[] getResume() {
-		return resume;
+	public String getResume_Link() {
+		return resume_Link;
 	}
 
-	public void setResume(byte[] resume) {
-		this.resume = resume;
+	public void setResume_Link(String resume_Link) {
+		this.resume_Link = resume_Link;
 	}
 
 	public String getComment() {
@@ -129,7 +124,7 @@ public class Applicants {
 	}
 
 	public Applicants(int id, String f_Name, String l_Name, String e_mail, String phone, String state, String city,
-			String address, String position, String additional_Info, String comment, byte[] resume) {
+			String address, String position, String resume_Link, String comment) {
 		super();
 		this.id = id;
 		this.f_Name = f_Name;
@@ -140,8 +135,7 @@ public class Applicants {
 		this.city = city;
 		this.address = address;
 		this.position = position;
-		this.additional_Info = additional_Info;
-		this.resume = resume;
+		this.resume_Link = resume_Link;
 		this.comment = comment;
 	}
     
